@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/rober/Dropbox/Workspace/JDA-3.6.0_354-withDependencies.jar" sourcepath="C:/Users/rober/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.6.0_354/efb37d94ef77490ab6a67b9ce4804069c01739e9/JDA-3.6.0_354-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,7 +1,5 @@
 package de.tu_darmstadt.informatik.robert_jakobi.tb.bot;
 
-import java.io.File;
-
 import javax.security.auth.login.LoginException;
 
 import de.tu_darmstadt.informatik.robert_jakobi.tb.util.FileManager;
@@ -43,7 +41,7 @@ public class TournamentBot {
                 if (event.getChannel().getName().equalsIgnoreCase("auslosung")) {
                     if (event.getMessage().getContentStripped().startsWith("!")) {
                         if (event.getGuild().getMember(event.getAuthor()).getRoles()
-                                .contains(event.getGuild().getRolesByName("ＣＵＰ ＡＤＭＩＮ", true).get(0))) {
+                                .contains(event.getGuild().getRolesByName("ｃｕｐ   ａｄｍｉｎ", true).get(0))) {
                             TournamentBot.this.onCommand(event);
                         }
                     }
@@ -71,7 +69,7 @@ public class TournamentBot {
         message = message.replaceAll(".*: ", "");
         if (message.startsWith("!group ")) {
             final String answer = FileManager.getInstance().readFile("groups",
-                    message.split(" ")[1].replaceAll(File.separator, ""));
+                    message.split(" ")[1].replaceAll("[\\\\] | [/]", ""));
             if (answer == null)
                 return;
             else if (answer.equals("not found")) {
@@ -80,7 +78,7 @@ public class TournamentBot {
                         .complete();
             } else {
                 event.getChannel() //
-                        .sendMessage(String.format("Gruppe %s:\n%s", message.split(" ")[1].toUpperCase(), answer)) //
+                        .sendMessage(String.format("__**Gruppe %s:**__\n*%s*", message.split(" ")[1].toUpperCase(), answer)) //
                         .complete();
             }
         } else {

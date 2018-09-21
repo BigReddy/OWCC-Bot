@@ -46,7 +46,7 @@ public class FileManager {
      */
     public String readFile(final String file) {
         try (final BufferedReader reader = new BufferedReader(new FileReader(new File(file)))) {
-            return reader.lines().collect(Collectors.joining("\n"));
+            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
         } catch (final FileNotFoundException e) {
             return "no found";
         } catch (final IOException e) {
@@ -79,6 +79,7 @@ public class FileManager {
      *            Contend to write
      */
     public void writeFile(final String folder, final String file, final String contend) {
+        new File(folder).mkdirs();
         try (final BufferedWriter writer = new BufferedWriter(new FileWriter(new File(folder + File.separator + file)))) {
             writer.write(contend);
         } catch (final IOException e) {
