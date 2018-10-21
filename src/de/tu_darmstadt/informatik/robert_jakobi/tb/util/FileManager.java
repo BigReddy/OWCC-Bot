@@ -86,4 +86,13 @@ public class FileManager {
             e.printStackTrace();
         }
     }
+
+    public String[] files(final String folder) {
+        new File(folder).mkdirs();
+        return new File(folder).list();
+    }
+
+    public boolean renameFile(final String folder, final String oldFileName, final String newFileName) {
+        return new File(folder + File.separator + oldFileName).renameTo(new File(folder + File.separator + newFileName));
+    }
 }
