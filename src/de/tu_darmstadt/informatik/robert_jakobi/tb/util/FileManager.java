@@ -95,4 +95,8 @@ public class FileManager {
     public boolean renameFile(final String folder, final String oldFileName, final String newFileName) {
         return new File(folder + File.separator + oldFileName).renameTo(new File(folder + File.separator + newFileName));
     }
+
+    public boolean deleteFile(final String folder, final String fileName) {
+        return new File(folder + File.separator + fileName).delete();
+    }
 }
